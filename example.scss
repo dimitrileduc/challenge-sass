@@ -19,6 +19,15 @@ $article__messages--warning-text-color: white;
 $article__messages--warning-border-color : #8C8C8C;
 $article__messages--warning-onhover-color: red;
 
+@mixin mixin-box-shadow($color-shadow) {
+    -webkit-box-shadow: 10px 10px 15px -4px $color-shadow;
+    -moz-box-shadow: 10px 10px 15px -4px $color-shadow;
+    box-shadow: 10px 10px 15px -4px $color-shadow;
+    
+}
+
+
+
 body {
   font: $font-body;
   color: $primary-color;
@@ -47,9 +56,8 @@ main{
         flex-grow: 1;
         flex-basis: 45%;
         border: 1px $main__article__section-border-color solid;
-        -webkit-box-shadow: 10px 10px 15px -4px $main__article__section-shadow-color;
-        -moz-box-shadow: 10px 10px 15px -4px $main__article__section-shadow-color;
-        box-shadow: 10px 10px 15px -4px $main__article__section-shadow-color;
+        @include mixin-box-shadow($main__article__section-shadow-color) ;
+        
         padding: 16px;
         margin: 16px;
         clear: both;
