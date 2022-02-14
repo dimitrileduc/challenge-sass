@@ -4,6 +4,20 @@ $secondary-color: red;
 $general-padding: 50px;
 $body-margin: 0;
 $background-color-body: #fff;
+$message-shared-color:#000;
+$message-shared-border-color:#ccc;
+$main__article__section-border-color:#8C8C8C;
+$main__article__section-shadow-color:#6b717f;
+$main__article__code-background-color:#000;
+$main__article__code-border-color: #6b717f;
+$main__article__code-text-color: #8C8C8C;
+$h3-color-text: #BF4080;
+$article__messages--success-background-color:green;
+$article__messages--error-background-color: red;
+$article__messages--warning-background-color: orange;
+$article__messages--warning-text-color: white;
+$article__messages--warning-border-color : #8C8C8C;
+$article__messages--warning-onhover-color: red;
 
 body {
   font: $font-body;
@@ -21,62 +35,70 @@ main{
 }
 
 %message-shared {
-    border: 1px solid #ccc;
+    border: 1px solid $message-shared-border-color;
     padding: 16px;
-    color: blue;
+    color: $message-shared-color;
   }
 
-article{
+.main__article {
     display:flex;
     flex-wrap: wrap;
+    .main__article__section{
+        flex-grow: 1;
+        flex-basis: 45%;
+        border: 1px $main__article__section-border-color solid;
+        -webkit-box-shadow: 10px 10px 15px -4px $main__article__section-shadow-color;
+        -moz-box-shadow: 10px 10px 15px -4px $main__article__section-shadow-color;
+        box-shadow: 10px 10px 15px -4px $main__article__section-shadow-color;
+        padding: 16px;
+        margin: 16px;
+        clear: both;
+        overflow: auto;
+        box-sizing: border-box;
+
+    }
+    .main__article__code{
+        background: $main__article__code-background-color;
+        border: 1px solid $main__article__code-border-color;
+        color: $main__article__code-text-color;
+        page-break-inside: avoid;
+        font-family: monospace;
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 1.6em;
+        max-width: 100%;
+        overflow: auto;
+        padding: 1em 1.5em;
+        display: block;
+        word-wrap: break-word;
+
+            .main__article__code--before{
+                float: left;
+                width: 40%;
+
+            }
+
+            .main__article__code--after{
+                float: right;
+                width: 40%;
+                
+            }
+
+
+    }
 }
 
-article section{
-    flex-grow: 1;
-    flex-basis: 45%;
-    border: 1px #8C8C8C solid;
-    -webkit-box-shadow: 10px 10px 15px -4px #6b717f;
-    -moz-box-shadow: 10px 10px 15px -4px #6b717f;
-    box-shadow: 10px 10px 15px -4px #6b717f;
-    padding: 16px;
-    margin: 16px;
-    clear: both;
-    overflow: auto;
-    box-sizing: border-box;
-
-}
 
 
-article code {
-    background: #000;
-    border: 1px solid #6b717f;
-    color: #8C8C8C;
-    page-break-inside: avoid;
-    font-family: monospace;
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 1.6em;
-    max-width: 100%;
-    overflow: auto;
-    padding: 1em 1.5em;
-    display: block;
-    word-wrap: break-word;
-}
 
-article code.before {
-    float: left;
-    width: 40%;
-}
 
-article code.after {
-    float: right;
-    width: 40%;
-}
+
+
 
 h1,
 h2,
 h3 {
-    color: #BF4080;
+    color: $h3-color-text;
 }
 
 h1 {
@@ -97,22 +119,22 @@ h3 {
 .article__messages{
     @extend %message-shared;
     .article__messages--success{
-        background-color: green;
+        background-color: $article__messages--success-background-color;
     }
 
     .article__messages--error{
-        background-color: red;
+        background-color: $article__messages--error-background-color;
     }
 
     .article__messages--warning{
-        border: 1px solid #8C8C8C;
+        border: 1px solid $article__messages--warning-border-color;
         padding: 16px;
-        color: #fff;
-        background-color: orange;
+        color: $article__messages--warning-text-color;
+        background-color: $article__messages--warning-background-color;
         
         &:hover {
             
-            background-color: red;
+            background-color: $article__messages--warning-onhover-color;
         }
 
     }
@@ -124,7 +146,7 @@ h3 {
 
 .footer{
     .footer__copyright{
-        color:green;
+        
         padding: 2 * $general-padding;
     }
 }

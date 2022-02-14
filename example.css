@@ -15,15 +15,14 @@ main {
 .article__messages {
   border: 1px solid #ccc;
   padding: 16px;
-  color: blue;
+  color: #000;
 }
 
-article {
+.main__article {
   display: flex;
   flex-wrap: wrap;
 }
-
-article section {
+.main__article .main__article__section {
   flex-grow: 1;
   flex-basis: 45%;
   border: 1px #8C8C8C solid;
@@ -36,8 +35,7 @@ article section {
   overflow: auto;
   box-sizing: border-box;
 }
-
-article code {
+.main__article .main__article__code {
   background: #000;
   border: 1px solid #6b717f;
   color: #8C8C8C;
@@ -52,13 +50,11 @@ article code {
   display: block;
   word-wrap: break-word;
 }
-
-article code.before {
+.main__article .main__article__code .main__article__code--before {
   float: left;
   width: 40%;
 }
-
-article code.after {
+.main__article .main__article__code .main__article__code--after {
   float: right;
   width: 40%;
 }
@@ -89,7 +85,7 @@ h3 {
 .article__messages .article__messages--warning {
   border: 1px solid #8C8C8C;
   padding: 16px;
-  color: #fff;
+  color: white;
   background-color: orange;
 }
 .article__messages .article__messages--warning:hover {
@@ -97,7 +93,6 @@ h3 {
 }
 
 .footer .footer__copyright {
-  color: green;
   padding: 100px;
 }
 
