@@ -146,7 +146,16 @@ h3 {
 
 @for $i from 1 through 6 {
     .block#{$i} {
-        background: darken(white,$i)
+        background: darken(white,$i);
+        
+       
 
     }
+    .textcolor#{$i} {
+       
+        color: darken(rgb(109, 47, 47),$i*5);
+       
+
+    }
+
 }
