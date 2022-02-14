@@ -15,8 +15,10 @@ body {
   color: $primary-color;
   padding: $general-padding;
   margin: $body-margin;
-  background-color: $background-color-body;
+  
   overflow-x: hidden;
+
+  
 
 }
 
@@ -138,5 +140,13 @@ h3 {
     .footer__copyright{
         
         padding: 2 * $general-padding;
+    }
+}
+
+
+@for $i from 1 through 6 {
+    .block#{$i} {
+        background: darken(white,$i)
+
     }
 }
